@@ -1,0 +1,26 @@
+.social-icons {
+  display: flex;
+  gap: var(--icon-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-icons--column {
+  flex-direction: column;
+}
+
+.social-icons--row {
+  flex-direction: row;
+}
+
+.social-icons img {
+  width: 50px;
+  height: 50px;
+}
+
+/* The Twitter icon is white: invert it to black when shown on the white
+   author section (the footer is dark, so the original white is kept). */
+.author .social-icons__white-glyph {
+  filter: invert(1);
+}

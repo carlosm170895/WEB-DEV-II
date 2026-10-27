@@ -1,0 +1,82 @@
+/* Each movie card: font size 1.5em, SMALL spacing, offset "block" shadow */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--brand-white);
+  font-size: 1.5em;
+  /* Hard-edged offset shadow as in the wireframes (hidden on mobile) */
+  box-shadow: 8px 8px 0 var(--brand-teal);
+}
+
+.movie-card__poster {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Body is a column so the button always sits at the bottom of the card */
+.movie-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-small);
+  padding: var(--space-small);
+}
+
+.movie-card__text {
+  flex: 1;
+}
+
+.movie-card__title {
+  margin: 0 0 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.movie-card__description {
+  margin: 0;
+  /* Inherits the card's 1.5em */
+  font-size: 1em;
+}
+
+/* Mobile: edge-to-edge cards without the offset shadow */
+@media (max-width: 719px) {
+  .movie-card {
+    box-shadow: none;
+  }
+}
+
+/* Desktop layouts (1024px and up) */
+@media (min-width: 1024px) {
+  /* Cards 1 and 4-6 span both columns of the container grid */
+  .movie-card--feature,
+  .movie-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  /* Feature: wide banner poster, then text with the button beside it */
+  .movie-card--feature .movie-card__poster {
+    aspect-ratio: 3 / 1;
+    object-position: center 25%;
+  }
+
+  .movie-card--feature .movie-card__body {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .movie-card--feature .movie-card__button {
+    flex: 0 0 30%;
+  }
+
+  /* Wide: poster on the left half, text and button on the right half */
+  .movie-card--wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .movie-card--wide .movie-card__poster {
+    height: 100%;
+  }
+}

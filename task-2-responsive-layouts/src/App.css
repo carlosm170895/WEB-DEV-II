@@ -1,0 +1,27 @@
+/* Primary content container: max 900px wide, uses the LARGE spacing */
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-large);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  /* Mobile cards run edge to edge, so there is only vertical padding */
+  padding: var(--space-large) 0;
+}
+
+/* Tablet: two columns of cards, with side margins */
+@media (min-width: 720px) {
+  .movie-list {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--space-large);
+  }
+}
+
+/* Desktop: the container is a 2-column grid; wide cards span both columns */
+@media (min-width: 1024px) {
+  .movie-list {
+    /* The 900px maximum applies to the content, so add padding on top */
+    padding: var(--space-large);
+    box-sizing: content-box;
+  }
+}

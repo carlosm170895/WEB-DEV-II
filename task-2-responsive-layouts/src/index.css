@@ -1,0 +1,66 @@
+/* ---------- Design tokens ---------- */
+:root {
+  /* watch.it brand colours */
+  --brand-black: #070410;
+  --brand-purple: #231651;
+  --brand-teal: #4dccbd;
+  --brand-yellow: #eef36a;
+  --brand-white: #ffffff;
+
+  /* Standard spacing (mobile values; overridden at the breakpoints below) */
+  --space-small: 16px;
+  --space-large: 16px;
+
+  --content-max-width: 900px;
+
+  --font-heading: 'Teko', 'Impact', sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+}
+
+/* Tablet: 720px and up */
+@media (min-width: 720px) {
+  :root {
+    --space-large: 32px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  :root {
+    --space-large: 48px;
+  }
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  background-color: var(--brand-purple);
+  color: var(--brand-black);
+  font-family: var(--font-body);
+  line-height: 1.3;
+  /* The cards' offset shadows must never cause sideways scrolling */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+button {
+  font-family: var(--font-heading);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

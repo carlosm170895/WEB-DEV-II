@@ -1,0 +1,18 @@
+/* Buttons: Teko, 2em text, SMALL spacing and SMALL border radius */
+.button {
+  padding: var(--space-small);
+  border: 2px solid var(--brand-black);
+  border-radius: var(--space-small);
+  background-color: var(--brand-yellow);
+  color: var(--brand-black);
+  font-size: 2em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--brand-teal);
+}

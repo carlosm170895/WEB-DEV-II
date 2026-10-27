@@ -1,0 +1,31 @@
+/* CSS Grid: featured album takes the first (double width) column */
+.album-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-top: 1px solid var(--outline);
+  border-bottom: 1px solid var(--outline);
+}
+
+.album-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.album-grid__featured {
+  grid-row: 1 / span 2;
+}
+
+/* On small screens: featured album on top, smaller albums in 2 columns */
+@media (max-width: 720px) {
+  .album-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .album-grid__featured {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+  }
+}

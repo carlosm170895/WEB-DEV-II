@@ -1,0 +1,10 @@
+/* The white content column that holds every section of the blog post */
+.content {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  background-color: var(--content-bg);
+  /* Thin outline matches the wireframe's column edges */
+  border: 1px solid var(--outline);
+  border-bottom: none;
+}

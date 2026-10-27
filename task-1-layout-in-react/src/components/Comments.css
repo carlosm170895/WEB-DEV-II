@@ -1,0 +1,30 @@
+.comments {
+  padding: var(--spacing);
+  background-color: var(--page-bg);
+  border-top: 1px solid var(--outline);
+}
+
+.comments h2 {
+  margin-bottom: 1rem;
+}
+
+.comment {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+}
+
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+/* Usernames are small bold body text, not full-size headings */
+.comment__username {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.comment__text {
+  margin: 0.25rem 0 0;
+}

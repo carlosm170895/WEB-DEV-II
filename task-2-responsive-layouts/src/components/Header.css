@@ -1,0 +1,62 @@
+/* Header uses SMALL spacing, except between navigation options (LARGE) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-small);
+  padding: var(--space-small);
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+  border-bottom: 4px solid var(--brand-teal);
+}
+
+/* Logo: 2em on mobile, 3em on tablet and desktop */
+.header__logo {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--brand-yellow);
+}
+
+/* Navigation is hidden on mobile */
+.header__nav {
+  display: none;
+  gap: var(--space-large);
+}
+
+.header__nav a:hover,
+.header__nav a:focus-visible {
+  color: var(--brand-teal);
+}
+
+/* The search button is a little smaller than the other buttons so it fits
+   the header (the header's text size is separate from the 2em spec for the
+   WATCH NOW buttons). */
+.header__search {
+  font-size: 1.25em;
+  padding: 8px var(--space-small);
+  line-height: 1.2;
+}
+
+@media (min-width: 720px) {
+  .header__logo {
+    font-size: 3em;
+  }
+
+  .header__nav {
+    display: flex;
+    margin-right: auto; /* sits next to the logo on tablet */
+  }
+
+  .header__search {
+    font-size: 2em;
+  }
+}
+
+/* Desktop: navigation is centred between the logo and the search button */
+@media (min-width: 1024px) {
+  .header__nav {
+    margin-right: 0;
+  }
+}
